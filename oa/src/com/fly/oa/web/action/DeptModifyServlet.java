@@ -19,6 +19,7 @@ public class DeptModifyServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        //response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         String contextPath = request.getContextPath();
         String deptno = request.getParameter("deptno");
@@ -29,10 +30,12 @@ public class DeptModifyServlet extends HttpServlet {
 
         if(update == 1){
             //修改成功
-            request.getRequestDispatcher("/dept/list").forward(request,response);
-        }{
+            //request.getRequestDispatcher("/dept/list").forward(request,response);
+            response.sendRedirect(contextPath + "/dept/list");
+        }else{
             //修改失败
-            request.getRequestDispatcher("/error.html").forward(request,response);
+            //request.getRequestDispatcher("/error.html").forward(request,response);
+            response.sendRedirect(contextPath+ "/error.html");
         }
     }
 }

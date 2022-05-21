@@ -26,9 +26,12 @@ public class DeptDeleteServlet extends HttpServlet {
 
         int update = deptService.deleteByDeptno(deptno);
         if(update == 1){
-            request.getRequestDispatcher("/dept/list").forward(request,response);
+            //request.getRequestDispatcher("/dept/list").forward(request,response);
+            response.sendRedirect(contextPath + "/dept/list");
+            System.out.println("删除了一条记录");
         }else{
-            request.getRequestDispatcher("/error.html").forward(request,response);
+            //request.getRequestDispatcher("/error.html").forward(request,response);
+            response.sendRedirect(contextPath + "/error.html");
         }
     }
 }

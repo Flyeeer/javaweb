@@ -29,9 +29,11 @@ public class DeptSaveServlet extends HttpServlet {
 
         int update = deptService.add(deptno, dname, loc);
         if(update == 1){
-            request.getRequestDispatcher("/dept/list").forward(request,response);
+            //request.getRequestDispatcher("/dept/list").forward(request,response);
+            response.sendRedirect(contextPath + "/dept/list");
         }else{
-            request.getRequestDispatcher("/error.html").forward(request,response);
+            //request.getRequestDispatcher("/error.html").forward(request,response);
+            response.sendRedirect(contextPath + "/error.html");
         }
     }
 }
