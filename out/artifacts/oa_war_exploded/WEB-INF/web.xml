@@ -5,64 +5,64 @@
          version="5.0">
 
     <!--查看列表-->
-    <servlet>
-        <servlet-name>list</servlet-name>
-        <servlet-class>com.fly.oa.web.action.DeptListServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>list</servlet-name>
-        <url-pattern>/dept/list</url-pattern>
-    </servlet-mapping>
+<!--    <servlet>-->
+<!--        <servlet-name>list</servlet-name>-->
+<!--        <servlet-class>com.fly.oa.web.action.DeptListServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>list</servlet-name>-->
+<!--        <url-pattern>/dept/list</url-pattern>-->
+<!--    </servlet-mapping>-->
 
-    <!--查看详情-->
-    <servlet>
-        <servlet-name>detail</servlet-name>
-        <servlet-class>com.fly.oa.web.action.DeptDetailServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>detail</servlet-name>
-        <url-pattern>/dept/detail</url-pattern>
-    </servlet-mapping>
+<!--    &lt;!&ndash;查看详情&ndash;&gt;-->
+<!--    <servlet>-->
+<!--        <servlet-name>detail</servlet-name>-->
+<!--        <servlet-class>com.fly.oa.web.action.DeptDetailServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>detail</servlet-name>-->
+<!--        <url-pattern>/dept/detail</url-pattern>-->
+<!--    </servlet-mapping>-->
 
-    <!--删除-->
-    <servlet>
-        <servlet-name>delete</servlet-name>
-        <servlet-class>com.fly.oa.web.action.DeptDeleteServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>delete</servlet-name>
-        <url-pattern>/dept/delete</url-pattern>
-    </servlet-mapping>
+<!--    &lt;!&ndash;删除&ndash;&gt;-->
+<!--    <servlet>-->
+<!--        <servlet-name>delete</servlet-name>-->
+<!--        <servlet-class>com.fly.oa.web.action.DeptDeleteServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>delete</servlet-name>-->
+<!--        <url-pattern>/dept/delete</url-pattern>-->
+<!--    </servlet-mapping>-->
 
 
 
-    <!--新增-->
-    <servlet>
-        <servlet-name>save</servlet-name>
-        <servlet-class>com.fly.oa.web.action.DeptSaveServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>save</servlet-name>
-        <url-pattern>/dept/save</url-pattern>
-    </servlet-mapping>
+<!--    &lt;!&ndash;新增&ndash;&gt;-->
+<!--    <servlet>-->
+<!--        <servlet-name>save</servlet-name>-->
+<!--        <servlet-class>com.fly.oa.web.action.DeptSaveServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>save</servlet-name>-->
+<!--        <url-pattern>/dept/save</url-pattern>-->
+<!--    </servlet-mapping>-->
 
-    <!--修改-->
-    <servlet>
-        <servlet-name>edit</servlet-name>
-        <servlet-class>com.fly.oa.web.action.DeptEditServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>edit</servlet-name>
-        <url-pattern>/dept/edit</url-pattern>
-    </servlet-mapping>
+<!--    &lt;!&ndash;修改&ndash;&gt;-->
+<!--    <servlet>-->
+<!--        <servlet-name>edit</servlet-name>-->
+<!--        <servlet-class>com.fly.oa.web.action.DeptEditServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>edit</servlet-name>-->
+<!--        <url-pattern>/dept/edit</url-pattern>-->
+<!--    </servlet-mapping>-->
 
-    <!--修改保存-->
-    <servlet>
-        <servlet-name>modify</servlet-name>
-        <servlet-class>com.fly.oa.web.action.DeptModifyServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>modify</servlet-name>
-        <url-pattern>/dept/modify</url-pattern>
-    </servlet-mapping>
+<!--    &lt;!&ndash;修改保存&ndash;&gt;-->
+<!--    <servlet>-->
+<!--        <servlet-name>modify</servlet-name>-->
+<!--        <servlet-class>com.fly.oa.web.action.DeptModifyServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>modify</servlet-name>-->
+<!--        <url-pattern>/dept/modify</url-pattern>-->
+<!--    </servlet-mapping>-->
 </web-app>

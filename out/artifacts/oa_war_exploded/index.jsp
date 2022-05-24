@@ -1,3 +1,4 @@
+<%@page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="zn-CN">
 
@@ -9,7 +10,7 @@
 </head>
 
 <body>
-    <a href="/oa/dept/list">查看部门列表</a>
+    <a href="<%=request.getContextPath()%>/dept/list">查看部门列表</a>
 </body>
 
 </html>
