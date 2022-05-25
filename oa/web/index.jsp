@@ -10,7 +10,15 @@
 </head>
 
 <body>
-    <a href="<%=request.getContextPath()%>/dept/list">查看部门列表</a>
+    <h1>用户登录</h1>
+    <hr>
+    <form action="<%=request.getContextPath()%>/user/login" method="post" >
+          用户名: <input type="text" name="username">
+          <br>
+          密码: <input type="password" name="password">
+          <input type="submit" value="登录">
+    </form>
+    <%--<a href="<%=request.getContextPath()%>/dept/list">查看部门列表</a>--%>
 </body>
 
 </html>
