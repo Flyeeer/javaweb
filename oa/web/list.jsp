@@ -19,6 +19,8 @@
 
  </head>
  <body>
+     <h3>欢迎 <%=session.getAttribute("username")%></h3>
+     <a href="<%=request.getContextPath()%>/user/exit">退出登录</a>
      <h1 align='center'>部门列表</h1>
      <hr>
      <table border='1px' align='center' width='50%'>

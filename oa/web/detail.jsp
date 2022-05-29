@@ -9,6 +9,7 @@
     <title>部门详情</title>
 </head>
 <body>
+<h3>欢迎 <%=session.getAttribute("username")%></h3>
     <h1>部门详情</h1>
     <hr>
 
