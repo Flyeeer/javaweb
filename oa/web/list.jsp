@@ -1,5 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
  <!DOCTYPE html>
  <html lang='zn-CN'>
  <head>
@@ -7,6 +8,7 @@
      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
      <meta name='viewport' content='width=device-width, initial-scale=1.0'>
      <title>部门列表</title>
+     <base href="${pageContext.request.scheme}://${pageContext.request.serverName}:${pageContext.request.serverPort}${pageContext.request.contextPath}/">
 
  <script type='text/javascript'>
          function del(dno) {
@@ -19,7 +21,7 @@
  </head>
  <body>
      <h3>欢迎 ${username}</h3>
-     <a href="${pageContext.request.contextPath}/user/exit">退出登录</a>
+     <a href="user/exit">退出登录</a>
      <h1 align='center'>部门列表</h1>
      <hr>
      <table border='1px' align='center' width='50%'>
@@ -37,13 +39,13 @@
                  <td>${deptTable.dName}</td>
                  <td>
                      <a href='javascript:void(0)' onclick='del(${deptTable.deptNo})'>删除</a>
-                     <a href='${pageContext.request.contextPath}/dept/detail?f=edit&deptno=${deptTable.deptNo}'>修改</a>
-                     <a href='${pageContext.request.contextPath}/dept/detail?f=detail&deptno=${deptTable.deptNo}'>详情</a>
+                     <a href='dept/detail?f=edit&deptno=${deptTable.deptNo}'>修改</a>
+                     <a href='dept/detail?f=detail&deptno=${deptTable.deptNo}'>详情</a>
                  <td>
              </tr>
          </c:forEach>
          </table>
-     <a href='${pageContext.request.contextPath}/add.jsp'>新增部门</a>
+     <a href='add.jsp'>新增部门</a>
  </body>
  </html>
 

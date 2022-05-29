@@ -29,7 +29,18 @@ public class UserServlet extends HttpServlet {
     private void doExit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         HttpSession session = request.getSession(false);
         if(session != null){
+            //手动销毁session
             session.invalidate();
+
+            //手动销毁cookie
+            Cookie[] cookies = request.getCookies();
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    cookie.setPath(request.getContextPath());
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                }
+            }
             response.sendRedirect(request.getContextPath() );
         }
     }
