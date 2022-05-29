@@ -1,6 +1,5 @@
-<%@ page import="java.util.List" %>
-<%@ page import="com.fly.oa.domain.DeptTable" %>
 <%@page contentType="text/html; charset=UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <!DOCTYPE html>
  <html lang='zn-CN'>
  <head>
@@ -12,15 +11,15 @@
  <script type='text/javascript'>
          function del(dno) {
      if(window.confirm('宝, 你确定删除吗？')) {
-         document.location.href = '<%=request.getContextPath()%>/dept/delete?deptno=' + dno;
+         document.location.href = '${pageContext.request.contextPath}/dept/delete?deptno=' + dno;
      }
  }
  </script>
 
  </head>
  <body>
-     <h3>欢迎 <%=session.getAttribute("username")%></h3>
-     <a href="<%=request.getContextPath()%>/user/exit">退出登录</a>
+     <h3>欢迎 ${username}</h3>
+     <a href="${pageContext.request.contextPath}/user/exit">退出登录</a>
      <h1 align='center'>部门列表</h1>
      <hr>
      <table border='1px' align='center' width='50%'>
@@ -31,26 +30,20 @@
                      <th>操作</th>
                  </tr>
 
-            <% int i = 0;
-                List<DeptTable> deptTableList = (List<DeptTable>)request.getAttribute("deptTableList");
-                for (DeptTable deptTable : deptTableList) {
-
-            %>
-                <tr>
-                     <td><%=++i%></td>
-                     <td><%=deptTable.getDeptNo()%></td>
-                     <td><%=deptTable.getdName()%></td>
-                     <td>
-                          <a href='javascript:void(0)' onclick='del(<%=deptTable.getDeptNo()%>)'>删除</a>
-                          <a href='<%=request.getContextPath()%>/dept/detail?f=edit&deptno=<%=deptTable.getDeptNo()%>'>修改</a>
-                          <a href='<%=request.getContextPath()%>/dept/detail?f=detail&deptno=<%=deptTable.getDeptNo()%>'>详情</a>
-                     <td>
-                 </tr>
-            <%}%>
-
-
+         <c:forEach items="${deptTableList}" varStatus="deptStatus" var="deptTable">
+             <tr>
+                 <td>${deptStatus.count}</td>
+                 <td>${deptTable.deptNo}</td>
+                 <td>${deptTable.dName}</td>
+                 <td>
+                     <a href='javascript:void(0)' onclick='del(${deptTable.deptNo})'>删除</a>
+                     <a href='${pageContext.request.contextPath}/dept/detail?f=edit&deptno=${deptTable.deptNo}'>修改</a>
+                     <a href='${pageContext.request.contextPath}/dept/detail?f=detail&deptno=${deptTable.deptNo}'>详情</a>
+                 <td>
+             </tr>
+         </c:forEach>
          </table>
-     <a href='<%=request.getContextPath()%>/add.jsp'>新增部门</a>
+     <a href='${pageContext.request.contextPath}/add.jsp'>新增部门</a>
  </body>
  </html>
 

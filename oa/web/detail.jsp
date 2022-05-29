@@ -9,16 +9,12 @@
     <title>部门详情</title>
 </head>
 <body>
-<h3>欢迎 <%=session.getAttribute("username")%></h3>
+<h3>欢迎 ${username}</h3>
     <h1>部门详情</h1>
     <hr>
-
-    <%
-            DeptTable deptTable = (DeptTable)request.getAttribute("deptTable");
-    %>
-    部门编号： <%=deptTable.getDeptNo()%><br>
-    部门名称： <%=deptTable.getdName()%><br>
-    部门位置； <%=deptTable.getLoc()%><br>
+    部门编号： ${deptTable.deptNo}<br>
+    部门名称： ${deptTable.dName}<br>
+    部门位置； ${deptTable.loc}<br>
     <input type="button" value="返回" onclick="window.history.back()">
 </body>
 </html>
