@@ -35,7 +35,7 @@ public class WelcomeServlet extends HttpServlet {
             User user = userService.selectByUnameAndPwd(username, password);
             if (user != null) {
                 HttpSession session = request.getSession();
-                session.setAttribute("username", username);
+                session.setAttribute("user", user);
                 response.sendRedirect(request.getContextPath() + "/dept/list");
             }else {
                 response.sendRedirect(request.getContextPath() + "/index.jsp");

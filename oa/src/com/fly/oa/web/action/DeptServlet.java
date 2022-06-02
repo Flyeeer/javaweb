@@ -24,21 +24,32 @@ public class DeptServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String servletPath = request.getServletPath();
-        HttpSession session = request.getSession(false);
-        if(session != null && session.getAttribute("username") != null){
-            if("/dept/list".equals(servletPath)){
-                doList(request,response);
-            } else if ("/dept/detail".equals(servletPath)) {
-                doDetail(request,response);
-            } else if("/dept/delete".equals(servletPath)){
-                doDelete(request,response);
-            } else if ("/dept/save".equals(servletPath)) {
-                doSave(request,response);
-            } else if("/dept/modify".equals(servletPath)){
-                doModify(request,response);
-            }
-        } else {
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+//        HttpSession session = request.getSession(false);
+//        if(session != null && session.getAttribute("username") != null){
+//            if("/dept/list".equals(servletPath)){
+//                doList(request,response);
+//            } else if ("/dept/detail".equals(servletPath)) {
+//                doDetail(request,response);
+//            } else if("/dept/delete".equals(servletPath)){
+//                doDelete(request,response);
+//            } else if ("/dept/save".equals(servletPath)) {
+//                doSave(request,response);
+//            } else if("/dept/modify".equals(servletPath)){
+//                doModify(request,response);
+//            }
+//        } else {
+//            response.sendRedirect(request.getContextPath() + "/index.jsp");
+//        }
+        if("/dept/list".equals(servletPath)){
+            doList(request,response);
+        } else if ("/dept/detail".equals(servletPath)) {
+            doDetail(request,response);
+        } else if("/dept/delete".equals(servletPath)){
+            doDelete(request,response);
+        } else if ("/dept/save".equals(servletPath)) {
+            doSave(request,response);
+        } else if("/dept/modify".equals(servletPath)){
+            doModify(request,response);
         }
 
     }

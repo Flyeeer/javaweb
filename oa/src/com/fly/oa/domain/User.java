@@ -1,5 +1,9 @@
 package com.fly.oa.domain;
 
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpSessionBindingEvent;
+import jakarta.servlet.http.HttpSessionBindingListener;
+
 import java.util.Objects;
 
 /**
@@ -7,8 +11,29 @@ import java.util.Objects;
  * @Vision 1.0
  */
 
-public class User {
+public class User implements HttpSessionBindingListener {
     private int id;
+
+    @Override
+    public void valueBound(HttpSessionBindingEvent event) {
+        ServletContext application = event.getSession().getServletContext();
+        Integer onlineCount = (Integer) application.getAttribute("onlineUser");
+        if (onlineCount == null) {
+            application.setAttribute("onlineUser", 1);
+        } else {
+            int count =  (Integer) application.getAttribute("onlineUser");
+            count++;
+            application.setAttribute("onlineUser", count);
+        }
+    }
+
+    @Override
+    public void valueUnbound(HttpSessionBindingEvent event) {
+        ServletContext application = event.getSession().getServletContext();
+        Integer onlineCount = (Integer) application.getAttribute("onlineUser");
+        onlineCount--;
+        application.setAttribute("onlineUser", onlineCount);
+    }
 
     public int getId() {
         return id;

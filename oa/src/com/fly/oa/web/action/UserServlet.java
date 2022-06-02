@@ -29,6 +29,8 @@ public class UserServlet extends HttpServlet {
     private void doExit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         HttpSession session = request.getSession(false);
         if(session != null){
+            session.removeAttribute("user");
+
             //手动销毁session
             session.invalidate();
 
@@ -52,7 +54,7 @@ public class UserServlet extends HttpServlet {
         User user = userService.selectByUnameAndPwd(username, password);
         if (user != null) {
             HttpSession session = request.getSession();
-            session.setAttribute("username", username);
+            session.setAttribute("user", user);
 
             if ("1".equals(request.getParameter("f"))){
                 Cookie cookie1 = new Cookie("username", username);
